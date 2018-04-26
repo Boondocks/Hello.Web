@@ -1,0 +1,31 @@
+﻿@model Hello.Web.Models.DefaultModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<body>
+<div>
+
+    <h2>Instance Id</h2>
+    <p>@Model.InstanceId</p>
+
+    <h2>Machine</h2>
+    <ul>
+        <li>Name: @Environment.MachineName</li>
+        <li>Platform: @Environment.OSVersion.Platform</li>
+        <li>Version: @Environment.OSVersion.VersionString</li>
+    </ul>
+
+    <h2>Environment Variables</h2>
+    <ul>
+        @foreach (var variable in Model.EnvironmentVariables)
+        {
+            <li>@variable.Name = @variable.Value</li>
+        }
+    </ul>
+</div>
+</body>
+</html>
